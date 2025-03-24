@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Transaksi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h2>Laporan Transaksi</h2>
+    
+    <table border="1" id="tabel_transaksi">
+        <tr>
+            <th>Tanggal</th>
+            <th>Pelanggan</th>
+            <th>Produk</th>
+            <th>Jumlah</th>
+            <th>Total Harga</th>
+        </tr>
+    </table>
+
+    <button onclick="hapusSemuaTransaksi()">Hapus Semua Transaksi</button>
+
+    <script>
+        function muatLaporanTransaksi() {
+            let transaksi = JSON.parse(localStorage.getItem("transaksi")) || [];
+            let tabel = document.getElementById("tabel_transaksi");
+
+            tabel.innerHTML = `<tr>
+                <th>Tanggal</th>
+                <th>Pelanggan</th>
+                <th>Produk</th>
+                <th>Jumlah</th>
+                <th>Total Harga</th>
+            </tr>`;
+
+            if (transaksi.length === 0) {
+                let row = tabel.insertRow();
+                let cell = row.insertCell(0);
+                cell.colSpan = 5;
+                cell.innerText = "Tidak ada transaksi.";
+                cell.style.textAlign = "center";
+            } else {
+                transaksi.forEach(t => {
+                    let row = tabel.insertRow();
+                    row.insertCell(0).innerText = t.tanggal;
+                    row.insertCell(1).innerText = t.pelanggan;
+                    row.insertCell(2).innerText = t.produk;
+                    row.insertCell(3).innerText = t.jumlah;
+                    row.insertCell(4).innerText = `Rp${t.hargaTotal.toLocaleString()}`;
+                });
+            }
+        }
+
+        function hapusSemuaTransaksi() {
+            if (confirm("Apakah Anda yakin ingin menghapus semua transaksi?")) {
+                localStorage.removeItem("transaksi");
+                alert("Semua transaksi telah dihapus!");
+                muatLaporanTransaksi();
+            }
+        }
+
+        window.onload = muatLaporanTransaksi;
+    </script>
+
+</body>
+</html>

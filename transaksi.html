@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaksi</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h2>Pencarian Produk</h2>
+    <input type="text" id="cari_produk">
+    <button onclick="cariProduk()">Cari Produk</button>
+    <p id="hasil_cari"></p>
+
+    <h2>Transaksi</h2>
+    <label>Nama Pelanggan:</label>
+    <input type="text" id="trans_pelanggan">
+    <label>Produk:</label>
+    <input type="text" id="trans_produk">
+    <label>Jumlah:</label>
+    <input type="number" id="trans_jumlah">
+    <button onclick="simpanTransaksi()">Simpan Transaksi</button>
+
+    <h2>Daftar Transaksi</h2>
+    <div id="hasil_transaksi"></div>
+
+
+    <br>
+    <br>
+    <section class="buttons">
+        <a href="laporan_faktur.html" class="btn">Faktur</a>
+    </section>
+
+    <footer>
+        <p>© 2025 Toko Kelontong | Lutfiah Sahira </p>
+    </footer>
+</body>
+</html>

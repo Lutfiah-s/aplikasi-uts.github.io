@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entri & Laporan Stok</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h2>Entri Produk</h2>
+    <label>Nama Produk:</label>
+    <input type="text" id="produk_nama">
+    <label>Stok:</label>
+    <input type="number" id="produk_stok">
+    <label>Harga:</label>
+    <input type="number" id="produk_harga">
+    <button onclick="simpanProduk()">Simpan Produk</button>
+
+    <h2>Laporan Stok Produk</h2>
+    <table border="1" id="tabel_produk">
+        <tr>
+            <th>Nama Produk</th>
+            <th>Stok</th>
+            <th>Harga</th>
+        </tr>
+    </table>
+
+    <h2>Entri Pelanggan</h2>
+    <label>Nama Pelanggan:</label>
+    <input type="text" id="pelanggan_nama">
+    <label>No. Telepon:</label>
+    <input type="text" id="pelanggan_telepon">
+    <button onclick="simpanPelanggan()">Simpan Pelanggan</button>
+
+    <h2>Data Pelanggan</h2>
+    <table border="1" id="tabel_pelanggan">
+        <tr>
+            <th>Nama</th>
+            <th>No. Telepon</th>
+        </tr>
+    </table>
+
+    <button onclick="hapusData()">Hapus Semua Data</button>
+
+    <br>
+    <br>
+    <section class="buttons">
+        <a href="index.html" class="btn">Home</a>
+    </section>
+
+    <footer>
+        <p>© 2025 Toko Kelontong | Lutfiah Sahira </p>
+    </footer>
+</body>
+</html>
